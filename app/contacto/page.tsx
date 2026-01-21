@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Instagram, Facebook } from "lucide-react"
+import { Instagram, Facebook, MessageCircle } from "lucide-react"
 
 
 export default function ContactoPage() {
@@ -46,6 +46,10 @@ export default function ContactoPage() {
                 <Link href="https://www.facebook.com/vibralma.sonidos.ancestrales" target="_blank" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors font-medium">
                   <Facebook className="w-5 h-5" />
                   Facebook
+                </Link>
+                <Link href="https://wa.me/56973343929" target="_blank" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors font-medium">
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp
                 </Link>
               </div>
             </div>
