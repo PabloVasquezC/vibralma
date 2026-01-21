@@ -2,6 +2,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import FloatingLines from "@/components/floating-lines"
 import { redirect } from "next/navigation"
+import Image from "next/image"
+
 
 export default function HomePage() {
   redirect("/inicio")
@@ -34,8 +36,8 @@ export default function HomePage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-serif font-semibold text-primary">
-              Vibralma
+            <Link href="/">
+              <Image src="/vibralma-logo-removed-bg.png" width={100} height={100} alt="Logo" />
             </Link>
             <div className="hidden md:flex items-center gap-8">
               <Link href="#inicio" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
