@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import FloatingLines from "@/components/floating-lines"
 import { redirect } from "next/navigation"
 import Image from "next/image"
+import CollaboratorsSection from "@/components/collaborators-section"
 
 
 export default function HomePage() {
@@ -140,6 +141,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <CollaboratorsSection />
 
       <section id="servicios" className="py-24 px-6 bg-muted/10">
         <div className="container mx-auto max-w-6xl">
