@@ -27,7 +27,13 @@ export default async function CollaboratorsSection() {
     const collaborators = await getCollaborators()
 
     if (collaborators.length === 0) {
-        return null
+        return (
+            <div className="p-10 text-center border-2 border-red-500 m-10 bg-red-50">
+                <h2 className="text-xl font-bold text-red-600">DEBUG: No se encontraron colaboradores</h2>
+                <p>La consulta a Sanity retornó 0 elementos.</p>
+                <p>Verifica que los documentos tengan _type == "collaboratorType" y estén publicados.</p>
+            </div>
+        )
     }
 
     return (
