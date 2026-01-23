@@ -28,6 +28,11 @@ export const serviceType = defineType({
             type: 'text',
         }),
         defineField({
+            name: 'icon',
+            title: 'Icon (Emoji)',
+            type: 'string',
+        }),
+        defineField({
             name: 'image',
             title: 'Image',
             type: 'image',

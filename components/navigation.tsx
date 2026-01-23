@@ -14,17 +14,18 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { href: "/inicio", label: "Inicio" },
-    { href: "/nosotros", label: "Nosotros" },
-    { href: "/servicios", label: "Servicios" },
-    { href: "/contacto", label: "Contacto" },
+    { href: "/#inicio", label: "Inicio" },
+    { href: "/#nosotros", label: "Nosotros" },
+    { href: "/#actividades", label: "Actividades" },
+    { href: "/#servicios", label: "Servicios" },
+    { href: "/#contacto", label: "Contacto" },
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/50 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-background/80 via-background/60 to-background/40 backdrop-blur-xl border-b border-white/10 shadow-sm">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <Link href="/inicio" className="z-50 relative">
+          <Link href="/#inicio" className="z-50 relative">
             <Image src="/vibralma-logo-removed-bg.png" width={400} height={400} alt="Vibralma Logo" className="h-16 w-auto hover:scale-110 transition-transform duration-300" />
           </Link>
 
@@ -46,7 +47,7 @@ export function Navigation() {
             ))}
           </div>
           <Button asChild size="sm" className="hidden md:inline-flex">
-            <Link href="/contacto">Reservar</Link>
+            <Link href="/#contacto">Reservar</Link>
           </Button>
 
           {/* Mobile Menu Button */}
@@ -82,7 +83,7 @@ export function Navigation() {
                   </Link>
                 ))}
                 <Button asChild size="lg" className="mt-4" onClick={() => setIsOpen(false)}>
-                  <Link href="/contacto">Reservar</Link>
+                  <Link href="/#contacto">Reservar</Link>
                 </Button>
               </motion.div>
             )}

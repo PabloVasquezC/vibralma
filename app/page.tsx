@@ -1,74 +1,12 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import FloatingLines from "@/components/floating-lines"
-import { redirect } from "next/navigation"
-import Image from "next/image"
-
-
+import ActivitiesSection from "@/components/activities-section"
+import ServicesSection from "@/components/services-section"
+import CollaboratorsSection from "@/components/collaborators-section" // Assuming default export
 
 export default function HomePage() {
-  redirect("/inicio")
-
   return (
     <main className="relative min-h-screen">
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-background/60 via-background/70 to-primary/10">
-        <FloatingLines
-          linesGradient={[
-            "#14B8A6", // Turquesa vibrante
-            "#8B5CF6", // Violeta místico
-            "#F472B6", // Rosa energético
-            "#FB923C", // Naranja cálido
-            "#34D399", // Verde esmeralda
-            "#FBBF24", // Dorado brillante
-          ]}
-          enabledWaves={["top", "middle", "bottom"]}
-          lineCount={[10, 14, 12]}
-          lineDistance={[5, 3, 4]}
-          animationSpeed={0.5}
-          interactive={true}
-          bendRadius={5.0}
-          bendStrength={-0.5}
-          parallax={true}
-          parallaxStrength={0.2}
-          mixBlendMode="screen"
-        />
-      </div>
-
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-lg border-b border-border">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/">
-              <Image src="/vibralma-logo-removed-bg.png" width={100} height={100} alt="Logo" />
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="#inicio" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                Inicio
-              </Link>
-              <Link
-                href="#nosotros"
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                Nosotros
-              </Link>
-              <Link
-                href="#servicios"
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                Servicios
-              </Link>
-              <Link
-                href="#contacto"
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                Contacto
-              </Link>
-            </div>
-            <Button size="sm" className="hidden md:inline-flex">
-              Reservar
-            </Button>
-          </div>
-        </div>
-      </nav>
 
       <section id="inicio" className="min-h-screen flex items-center justify-center px-6 pt-20">
         <div className="container mx-auto">
@@ -82,11 +20,11 @@ export default function HomePage() {
                 terapia de sonidos, coaching psicológico y técnicas holísticas.
               </p>
               <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
-                <Button size="lg" className="text-base shadow-lg shadow-primary/20">
-                  Descubre nuestros servicios
+                <Button asChild size="lg" className="text-base shadow-lg shadow-primary/20">
+                  <Link href="#servicios">Descubre nuestros servicios</Link>
                 </Button>
-                <Button size="lg" variant="outline" className="text-base border-2 bg-transparent">
-                  Contactar
+                <Button asChild size="lg" variant="outline" className="text-base border-2 bg-transparent">
+                  <Link href="#contacto">Contactar</Link>
                 </Button>
               </div>
             </div>
@@ -103,9 +41,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="nosotros" className="py-24 px-6">
+      <ActivitiesSection />
+
+      <section id="nosotros" className="py-24 px-6 bg-gradient-to-br from-background via-muted/40 to-background border-t border-border/40">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div className="order-2 md:order-1">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-secondary/10">
                 <img
@@ -139,10 +79,12 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
+          <CollaboratorsSection />
         </div>
       </section>
 
-      <section id="servicios" className="py-24 px-6 bg-muted/10">
+      <section id="servicios" className="py-24 px-6 bg-gradient-to-b from-muted/40 to-background border-t border-border/40">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">Nuestros Servicios</h2>
@@ -151,26 +93,11 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
-              <div
-                key={i}
-                className="group p-6 bg-card/50 backdrop-blur-sm rounded-xl border border-border/40 hover:border-primary/40 transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-2xl">
-                    {service.icon}
-                  </div>
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-              </div>
-            ))}
-          </div>
+          <ServicesSection />
         </div>
       </section>
 
-      <section id="contacto" className="py-24 px-6">
+      <section id="contacto" className="py-24 px-6 bg-gradient-to-t from-primary/10 via-background to-background border-t border-border/40">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-serif font-bold bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent mb-4">
@@ -252,117 +179,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <footer className="py-12 px-6 border-t-2 border-border bg-gradient-to-b from-transparent to-primary/3">
-        <div className="container mx-auto text-center">
-          <p className="text-sm text-foreground/70 font-medium">
-            © {new Date().getFullYear()} Vibralma. Todos los derechos reservados.
-          </p>
-        </div>
-      </footer>
     </main>
   )
 }
 
-const services = [
-  {
-    icon: "🧠",
-    title: "Coaching Psicológico Laboral",
-    description: "Comunicación efectiva, liderazgo y prevención del Burnout para equipos de alto rendimiento.",
-  },
-  {
-    icon: "🎵",
-    title: "Terapia de Sonidos",
-    description: "Cuencos tibetanos y gongs para reducción profunda del estrés y armonización energética.",
-  },
-  {
-    icon: "🎼",
-    title: "Musicoterapia",
-    description: "Relajación profunda mediante elementos musicales terapéuticos cuidadosamente seleccionados.",
-  },
-  {
-    icon: "🤝",
-    title: "Dinámicas y Juegos",
-    description: "Fortalecimiento de equipos mediante actividades interactivas y colaborativas.",
-  },
-  {
-    icon: "⚡",
-    title: "Chi Kung",
-    description: "Práctica china milenaria de cultivo de energía interna y movimiento consciente.",
-  },
-  {
-    icon: "💆",
-    title: "Masajes Terapéuticos",
-    description: "Sesiones de masaje profesional directamente en tu lugar de trabajo.",
-  },
-  {
-    icon: "🎲",
-    title: "Ludoteca Móvil",
-    description: "Juegos de madera y desafíos estratégicos para estimular la creatividad y cohesión.",
-  },
-  {
-    icon: "🧘",
-    title: "Movimiento Consciente",
-    description: "Estiramientos y conciencia corporal para mejorar postura y reducir tensión.",
-  },
-  {
-    icon: "🎨",
-    title: "Arteterapia",
-    description: "Expresión emocional y sanación mediante la creación artística guiada.",
-  },
-  {
-    icon: "🌸",
-    title: "Aromaterapia",
-    description: "Aceites esenciales terapéuticos para equilibrio emocional y bienestar.",
-  },
-  {
-    icon: "💃",
-    title: "Biodanza",
-    description: "Música, movimiento y vivencia grupal para reconexión con las emociones.",
-  },
-  {
-    icon: "🔄",
-    title: "Danza Circular",
-    description: "Integración grupal mediante danzas tradicionales en formación circular.",
-  },
-  {
-    icon: "🥁",
-    title: "Danza Africana",
-    description: "Ritmos percutivos y movimientos terrestres para liberar energía vital.",
-  },
-  {
-    icon: "💪",
-    title: "Zumba",
-    description: "Fitness cardiovascular con música latina y coreografías energizantes.",
-  },
-  {
-    icon: "🕉️",
-    title: "Conexión Interior",
-    description: "Meditación profunda y movimiento intuitivo para paz mental y claridad.",
-  },
-  {
-    icon: "🧘‍♀️",
-    title: "Yoga Terapéutico",
-    description: "Alineación postural, respiración consciente y flexibilidad para el bienestar integral.",
-  },
-  {
-    icon: "💼",
-    title: "Bienestar Laboral",
-    description: "Gestión del estrés y comunicación efectiva en ambientes corporativos.",
-  },
-  {
-    icon: "🛡️",
-    title: "Defensa Personal",
-    description: "Autodefensa y mindfulness para empoderamiento personal y seguridad.",
-  },
-  {
-    icon: "🕊️",
-    title: "Ceremonias de Unión",
-    description: "Compromisos sagrados con ritos ancestrales personalizados.",
-  },
-  {
-    icon: "🍃",
-    title: "Gastronomía Integral",
-    description: "Catering consciente y nutritivo con ingredientes saludables y sostenibles.",
-  },
-]
+
