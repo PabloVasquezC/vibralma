@@ -4,6 +4,7 @@ import ActivitiesSection from "@/components/activities-section"
 import ServicesSection from "@/components/services-section"
 import CollaboratorsSection from "@/components/collaborators-section" // Assuming default export
 import { N8nChat } from "@/components/N8n"
+import { Instagram, Facebook, MessageCircle } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -130,12 +131,18 @@ export default function HomePage() {
               <div className="p-6 bg-gradient-to-br from-card to-secondary/5 backdrop-blur-sm rounded-xl border-2 border-secondary/20 shadow-lg">
                 <h3 className="font-semibold text-foreground mb-4 text-lg">Síguenos</h3>
                 <div className="flex gap-4">
-                  <Link href="#" className="text-foreground/70 hover:text-primary transition-colors font-medium">
-                    Instagram
-                  </Link>
-                  <Link href="#" className="text-foreground/70 hover:text-primary transition-colors font-medium">
-                    Facebook
-                  </Link>
+                  <Link href="https://www.instagram.com/vibralma_sonidos_ancestrales/" target="_blank" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors font-medium">
+                  <Instagram className="w-5 h-5" />
+                  Instagram
+                </Link>
+                <Link href="https://www.facebook.com/vibralma.sonidos.ancestrales" target="_blank" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors font-medium">
+                  <Facebook className="w-5 h-5" />
+                  Facebook
+                </Link>
+                <Link href="https://wa.me/56973343929" target="_blank" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors font-medium">
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp
+                </Link>
                 </div>
               </div>
             </div>
