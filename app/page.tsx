@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import ActivitiesSection from "@/components/activities-section"
 import ServicesSection from "@/components/services-section"
 import CollaboratorsSection from "@/components/collaborators-section" // Assuming default export
+import { N8nChat } from "@/components/N8n"
 
 export default function HomePage() {
   return (
@@ -179,6 +180,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <N8nChat />
     </main>
   )
 }
