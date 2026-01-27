@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import ActivitiesSection from "@/components/activities-section"
+import GallerySection from "@/components/gallery-section"
+import CollaboratorsSection from "@/components/collaborators-section"
 
 export default function InicioPage() {
   return (
@@ -39,6 +41,8 @@ export default function InicioPage() {
       </section>
 
       <ActivitiesSection />
+      <GallerySection />
+      <CollaboratorsSection />
     </main>
   )
 }
