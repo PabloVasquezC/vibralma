@@ -18,6 +18,7 @@ export function Navigation() {
     { href: "/#inicio", label: "Inicio" },
     { href: "/#nosotros", label: "Nosotros" },
     { href: "/#actividades", label: "Actividades" },
+    { href: "/#galeria", label: "Galería" },
     { href: "/#servicios", label: "Servicios" },
     { href: "/#contacto", label: "Contacto" },
   ]

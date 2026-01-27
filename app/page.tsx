@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import ActivitiesSection from "@/components/activities-section"
+import GallerySection from "@/components/gallery-section"
 import ServicesSection from "@/components/services-section"
 import CollaboratorsSection from "@/components/collaborators-section" // Assuming default export
 import { N8nChat } from "@/components/N8n"
@@ -44,6 +45,8 @@ export default function HomePage() {
       </section>
 
       <ActivitiesSection />
+
+      <GallerySection />
 
       <section id="nosotros" className="py-24 px-6 bg-gradient-to-br from-background via-muted/40 to-background border-t border-border/40">
         <div className="container mx-auto max-w-6xl">
@@ -132,17 +135,17 @@ export default function HomePage() {
                 <h3 className="font-semibold text-foreground mb-4 text-lg">Síguenos</h3>
                 <div className="flex gap-4">
                   <Link href="https://www.instagram.com/vibralma_sonidos_ancestrales/" target="_blank" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors font-medium">
-                  <Instagram className="w-5 h-5" />
-                  Instagram
-                </Link>
-                <Link href="https://www.facebook.com/vibralma.sonidos.ancestrales" target="_blank" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors font-medium">
-                  <Facebook className="w-5 h-5" />
-                  Facebook
-                </Link>
-                <Link href="https://wa.me/56973343929" target="_blank" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors font-medium">
-                  <MessageCircle className="w-5 h-5" />
-                  WhatsApp
-                </Link>
+                    <Instagram className="w-5 h-5" />
+                    Instagram
+                  </Link>
+                  <Link href="https://www.facebook.com/vibralma.sonidos.ancestrales" target="_blank" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors font-medium">
+                    <Facebook className="w-5 h-5" />
+                    Facebook
+                  </Link>
+                  <Link href="https://wa.me/56973343929" target="_blank" className="flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors font-medium">
+                    <MessageCircle className="w-5 h-5" />
+                    WhatsApp
+                  </Link>
                 </div>
               </div>
             </div>

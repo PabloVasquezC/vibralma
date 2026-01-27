@@ -27,7 +27,7 @@ export default async function GallerySection() {
     }
 
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section id="galeria" className="py-24 relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
