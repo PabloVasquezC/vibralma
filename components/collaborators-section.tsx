@@ -1,6 +1,7 @@
 import { client } from "@/sanity/lib/client"
 import { urlFor } from "@/sanity/lib/image"
 import Image from "next/image"
+import { FadeIn, StaggerContainer, StaggerItem } from "./ui/motion-wrapper"
 
 interface Collaborator {
     _id: string
@@ -32,16 +33,18 @@ export default async function CollaboratorsSection() {
 
     return (
         <div className="mt-24 pt-16 border-t border-border/20">
-            <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">Nuestros Colaboradores</h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                    Conoce al equipo de profesionales dedicados a tu bienestar
-                </p>
-            </div>
+            <FadeIn direction="up">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">Nuestros Colaboradores</h2>
+                    <p className="text-muted-foreground max-w-2xl mx-auto">
+                        Conoce al equipo de profesionales dedicados a tu bienestar
+                    </p>
+                </div>
+            </FadeIn>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {collaborators.map((collaborator) => (
-                    <div
+                    <StaggerItem
                         key={collaborator._id}
                         className="group relative overflow-hidden rounded-2xl bg-card border border-border/50 transition-all duration-300 hover:shadow-xl hover:translate-y-[-4px]"
                     >
@@ -80,9 +83,9 @@ export default async function CollaboratorsSection() {
                                 </p>
                             </div>
                         )}
-                    </div>
+                    </StaggerItem>
                 ))}
-            </div>
+            </StaggerContainer>
         </div>
     )
 }

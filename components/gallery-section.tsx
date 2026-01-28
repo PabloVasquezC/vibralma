@@ -1,6 +1,7 @@
 import { client } from "@/sanity/lib/client"
 import { urlFor } from "@/sanity/lib/image"
 import Image from "next/image"
+import { FadeIn, StaggerContainer, StaggerItem } from "./ui/motion-wrapper"
 
 interface GalleryItem {
     _id: string
@@ -29,18 +30,20 @@ export default async function GallerySection() {
     return (
         <section id="galeria" className="py-24 relative overflow-hidden">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
-                        Galería
-                    </h2>
-                    <p className="text-muted-foreground max-w-2xl mx-auto">
-                        Explora nuestros momentos y experiencias
-                    </p>
-                </div>
+                <FadeIn direction="up">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
+                            Galería
+                        </h2>
+                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                            Explora nuestros momentos y experiencias
+                        </p>
+                    </div>
+                </FadeIn>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {galleryItems.map((item) => (
-                        <div
+                        <StaggerItem
                             key={item._id}
                             className="group relative h-80 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500"
                         >
@@ -63,9 +66,9 @@ export default async function GallerySection() {
                                     </p>
                                 )}
                             </div>
-                        </div>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerContainer>
             </div>
         </section>
     )

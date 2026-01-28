@@ -59,8 +59,8 @@ uniform vec3 lineGradient[8];
 uniform int lineGradientCount;
 
 const vec3 BLACK = vec3(0.0);
-const vec3 PINK  = vec3(233.0, 71.0, 245.0) / 255.0;
-const vec3 BLUE  = vec3(47.0,  75.0, 162.0) / 255.0;
+const vec3 PINK  = vec3(178.0, 128.0, 230.0) / 255.0; // Amethyst
+const vec3 BLUE  = vec3(51.0,  153.0, 179.0) / 255.0; // Ocean Teal
 
 mat2 rotate(float r) {
   return mat2(cos(r), sin(r), -sin(r), cos(r));

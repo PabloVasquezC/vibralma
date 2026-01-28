@@ -1,102 +1,118 @@
+
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Fondo suave con crema cálido más pronunciado */
-  --background: oklch(0.95 0.03 85);
-  --foreground: oklch(0.15 0.02 280);
+  /* Fondo suave con crema cálido más pronunciado - Soft Porcelain */
+  --background: oklch(0.97 0.01 200);
+  /* Dark Teal-Grey for text */
+  --foreground: oklch(0.15 0.02 210);
 
   /* Cards con toque de calidez */
-  --card: oklch(0.96 0.02 85);
-  --card-foreground: oklch(0.15 0.02 280);
+  --card: oklch(0.98 0.005 200);
+  --card-foreground: oklch(0.15 0.02 210);
 
-  --popover: oklch(0.98 0.008 70);
-  --popover-foreground: oklch(0.15 0.02 280);
+  --popover: oklch(0.99 0.005 200);
+  --popover-foreground: oklch(0.15 0.02 210);
 
-  /* Turquesa vibrante como primary - ondas sonoras del océano */
-  --primary: oklch(0.58 0.18 195);
-  --primary-foreground: oklch(0.98 0.008 70);
+  /* Primary: Ocean Teal - Calma y sonido */
+  --primary: oklch(0.60 0.11 210);
+  --primary-foreground: oklch(0.98 0.005 200);
 
-  /* Violeta místico como secondary - espiritualidad y chakras */
-  --secondary: oklch(0.65 0.16 285);
-  --secondary-foreground: oklch(0.98 0.008 70);
+  /* Secondary: Soft Amethyst - Espiritualidad */
+  --secondary: oklch(0.70 0.10 290);
+  --secondary-foreground: oklch(0.15 0.02 210);
 
   /* Muted con sutileza */
-  --muted: oklch(0.92 0.015 70);
-  --muted-foreground: oklch(0.48 0.03 270);
+  --muted: oklch(0.93 0.02 200);
+  --muted-foreground: oklch(0.45 0.03 210);
 
-  /* Coral vibrante como accent - energía vital y calidez */
-  --accent: oklch(0.72 0.2 35);
-  --accent-foreground: oklch(0.15 0.02 280);
+  /* Accent: Warm Sand - Tierra y grounding */
+  --accent: oklch(0.80 0.12 75);
+  --accent-foreground: oklch(0.15 0.02 210);
 
   --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.98 0.008 70);
+  --destructive-foreground: oklch(0.98 0.005 200);
 
-  /* Borders más visibles */
-  --border: oklch(0.85 0.02 70);
-  --input: oklch(0.85 0.02 70);
-  --ring: oklch(0.58 0.18 195);
+  /* Borders más suaves */
+  --border: oklch(0.88 0.02 200);
+  --input: oklch(0.88 0.02 200);
+  --ring: oklch(0.60 0.11 210);
 
-  /* Chart colors vibrantes inspirados en chakras */
-  --chart-1: oklch(0.58 0.18 195);
-  /* Turquesa - chakra garganta */
-  --chart-2: oklch(0.72 0.2 35);
-  /* Coral - chakra sacro */
-  --chart-3: oklch(0.65 0.16 285);
-  /* Violeta - chakra corona */
-  --chart-4: oklch(0.7 0.18 140);
-  /* Verde esmeralda - chakra corazón */
-  --chart-5: oklch(0.68 0.2 55);
-  /* Dorado cálido - chakra plexo solar */
+  /* Chart colors - Harmonic Palette */
+  --chart-1: oklch(0.60 0.11 210);
+  /* Teal */
+  --chart-2: oklch(0.70 0.10 290);
+  /* Amethyst */
+  --chart-3: oklch(0.80 0.12 75);
+  /* Sand */
+  --chart-4: oklch(0.65 0.15 160);
+  /* Sage/Green */
+  --chart-5: oklch(0.75 0.15 50);
+  /* Soft Gold */
 
   --radius: 0.75rem;
 
-  --sidebar: oklch(0.97 0.01 70);
-  --sidebar-foreground: oklch(0.15 0.02 280);
-  --sidebar-primary: oklch(0.58 0.18 195);
-  --sidebar-primary-foreground: oklch(0.98 0.008 70);
-  --sidebar-accent: oklch(0.92 0.015 70);
-  --sidebar-accent-foreground: oklch(0.15 0.02 280);
-  --sidebar-border: oklch(0.85 0.02 70);
-  --sidebar-ring: oklch(0.58 0.18 195);
+  --sidebar: oklch(0.97 0.01 200);
+  --sidebar-foreground: oklch(0.15 0.02 210);
+  --sidebar-primary: oklch(0.60 0.11 210);
+  --sidebar-primary-foreground: oklch(0.98 0.005 200);
+  --sidebar-accent: oklch(0.93 0.02 200);
+  --sidebar-accent-foreground: oklch(0.15 0.02 210);
+  --sidebar-border: oklch(0.88 0.02 200);
+  --sidebar-ring: oklch(0.60 0.11 210);
 }
 
 .dark {
-  /* Dark mode con azul oscuro profundo */
-  --background: oklch(0.12 0.03 260);
-  --foreground: oklch(0.95 0.01 70);
-  --card: oklch(0.16 0.03 260);
-  --card-foreground: oklch(0.95 0.01 70);
-  --popover: oklch(0.16 0.03 260);
-  --popover-foreground: oklch(0.95 0.01 70);
-  --primary: oklch(0.68 0.2 195);
-  --primary-foreground: oklch(0.12 0.03 260);
-  --secondary: oklch(0.75 0.18 285);
-  --secondary-foreground: oklch(0.12 0.03 260);
-  --muted: oklch(0.22 0.03 260);
-  --muted-foreground: oklch(0.68 0.03 240);
-  --accent: oklch(0.78 0.22 35);
-  --accent-foreground: oklch(0.12 0.03 260);
+  /* Dark mode con azul profundo y místico - Deep Midnight */
+  --background: oklch(0.14 0.04 260);
+  --foreground: oklch(0.96 0.01 260);
+
+  --card: oklch(0.18 0.04 260);
+  --card-foreground: oklch(0.96 0.01 260);
+
+  --popover: oklch(0.18 0.04 260);
+  --popover-foreground: oklch(0.96 0.01 260);
+
+  /* Primary: Luminous Teal */
+  --primary: oklch(0.75 0.14 210);
+  --primary-foreground: oklch(0.14 0.04 260);
+
+  /* Secondary: Luminous Lavender */
+  --secondary: oklch(0.78 0.12 290);
+  --secondary-foreground: oklch(0.14 0.04 260);
+
+  --muted: oklch(0.25 0.04 260);
+  --muted-foreground: oklch(0.75 0.02 240);
+
+  /* Accent: Gold Dust */
+  --accent: oklch(0.85 0.15 75);
+  --accent-foreground: oklch(0.14 0.04 260);
+
   --destructive: oklch(0.6 0.24 25);
   --destructive-foreground: oklch(0.95 0.01 70);
-  --border: oklch(0.28 0.03 260);
-  --input: oklch(0.28 0.03 260);
-  --ring: oklch(0.68 0.2 195);
-  --chart-1: oklch(0.68 0.2 195);
-  --chart-2: oklch(0.78 0.22 35);
-  --chart-3: oklch(0.75 0.18 285);
-  --chart-4: oklch(0.75 0.2 140);
-  --chart-5: oklch(0.75 0.22 55);
-  --sidebar: oklch(0.16 0.03 260);
-  --sidebar-foreground: oklch(0.95 0.01 70);
-  --sidebar-primary: oklch(0.68 0.2 195);
-  --sidebar-primary-foreground: oklch(0.12 0.03 260);
-  --sidebar-accent: oklch(0.22 0.03 260);
-  --sidebar-accent-foreground: oklch(0.95 0.01 70);
-  --sidebar-border: oklch(0.28 0.03 260);
-  --sidebar-ring: oklch(0.68 0.2 195);
+
+  --border: oklch(0.30 0.04 260);
+  --input: oklch(0.30 0.04 260);
+  --ring: oklch(0.75 0.14 210);
+
+  --chart-1: oklch(0.75 0.14 210);
+  --chart-2: oklch(0.78 0.12 290);
+  --chart-3: oklch(0.85 0.15 75);
+  --chart-4: oklch(0.75 0.15 160);
+  --chart-5: oklch(0.85 0.15 50);
+
+  --sidebar: oklch(0.18 0.04 260);
+  --sidebar-foreground: oklch(0.96 0.01 260);
+  --sidebar-primary: oklch(0.75 0.14 210);
+  --sidebar-primary-foreground: oklch(0.14 0.04 260);
+  --sidebar-accent: oklch(0.25 0.04 260);
+  --sidebar-accent-foreground: oklch(0.96 0.01 260);
+  --sidebar-border: oklch(0.30 0.04 260);
+  --sidebar-ring: oklch(0.75 0.14 210);
 }
 
 /* n8n Chat Widget Overrides */

@@ -1,6 +1,7 @@
 import { client } from "@/sanity/lib/client"
 import { urlFor } from "@/sanity/lib/image"
 import Image from "next/image"
+import { FadeIn, StaggerContainer, StaggerItem } from "./ui/motion-wrapper"
 
 interface Activity {
     _id: string
@@ -30,18 +31,20 @@ export default async function ActivitiesSection() {
     return (
         <section id="actividades" className="py-24 px-6 bg-gradient-to-b from-background to-primary/10 border-t border-border/40">
             <div className="container mx-auto max-w-6xl">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
-                        Nuestras Actividades
-                    </h2>
-                    <p className="text-muted-foreground max-w-2xl mx-auto">
-                        Experiencias diseñadas para el crecimiento y bienestar
-                    </p>
-                </div>
+                <FadeIn direction="up">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
+                            Nuestras Actividades
+                        </h2>
+                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                            Experiencias diseñadas para el crecimiento y bienestar
+                        </p>
+                    </div>
+                </FadeIn>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {activities.map((activity) => (
-                        <div
+                        <StaggerItem
                             key={activity._id}
                             className="group relative overflow-hidden rounded-2xl bg-card shadow-lg hover:shadow-xl transition-all duration-300"
                         >
@@ -70,9 +73,9 @@ export default async function ActivitiesSection() {
                                     {activity.name}
                                 </h3>
                             </div>
-                        </div>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerContainer>
             </div>
         </section>
     )
