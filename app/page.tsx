@@ -183,42 +183,16 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="p-6 bg-gradient-to-br from-card to-accent/5 backdrop-blur-sm rounded-xl border-2 border-accent/20 shadow-lg">
-                <form className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Nombre
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      className="w-full px-4 py-2 bg-background border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Correo Electrónico
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      className="w-full px-4 py-2 bg-background border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                      Mensaje
-                    </label>
-                    <textarea
-                      id="message"
-                      rows={4}
-                      className="w-full px-4 py-2 bg-background border-2 border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-foreground resize-none"
-                    />
-                  </div>
-                  <Button type="submit" className="w-full shadow-lg shadow-primary/20">
-                    Enviar mensaje
-                  </Button>
-                </form>
+              <div className="p-1 bg-white rounded-xl overflow-hidden h-full min-h-[600px] shadow-lg">
+                <iframe
+                  src="https://n8n.fluxia.cl/form/84cdbdaf-aad0-4e46-a24e-30fb94fd85b1"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  title="Formulario de contacto"
+                  className="w-full h-full min-h-[600px]"
+                  style={{ backgroundColor: 'transparent' }}
+                />
               </div>
             </div>
           </FadeIn>
