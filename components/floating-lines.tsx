@@ -254,6 +254,8 @@ interface FloatingLinesProps {
   parallaxStrength?: number
   mixBlendMode?: string
 }
+  
+
 
 export default function FloatingLines({
   linesGradient,
