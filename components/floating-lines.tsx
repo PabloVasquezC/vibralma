@@ -22,6 +22,7 @@ void main() {
 }
 `
 
+// Update fragment shader to support transparency
 const fragmentShader = `
 precision highp float;
 
@@ -194,7 +195,13 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     }
   }
   
-  fragColor = vec4(col, 1.0);
+  // Calculate alpha based on color brightness + a small threshold for gradients
+  // If we have background color (b != 0), we might want full opacity, but here we assume lines only for overlay
+  float alpha = length(col) > 0.001 ? 1.0 : 0.0;
+  // Improved alpha blending for smooth edges
+  alpha = clamp(length(col) * 10.0, 0.0, 1.0);
+  
+  fragColor = vec4(col, alpha);
 }
 
 void main() {
@@ -302,7 +309,7 @@ export default function FloatingLines({
     const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1)
     camera.position.z = 1
 
-    const renderer = new WebGLRenderer({ antialias: true, alpha: false })
+    const renderer = new WebGLRenderer({ antialias: true, alpha: true })
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2))
     renderer.domElement.style.width = "100%"
     renderer.domElement.style.height = "100%"
@@ -366,6 +373,7 @@ export default function FloatingLines({
       uniforms,
       vertexShader,
       fragmentShader,
+      transparent: true,
     })
 
     const geometry = new PlaneGeometry(2, 2)

@@ -1,4 +1,7 @@
 import CollaboratorsSection from "@/components/collaborators-section"
+import InstagramEmbed from "@/components/instagram-embed"
+import InstagramIframe from "@/components/instagram-embed"
+
 
 export default function NosotrosPage() {
   return (
@@ -8,11 +11,12 @@ export default function NosotrosPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-secondary/10">
-                <img
+                {/* <img
                   src="/sound-therapy-healing-session-with-gongs-and-singi.jpg"
                   alt="Sesión de sanación con gongs y cuencos"
                   className="w-full h-auto"
-                />
+                /> */}
+                <InstagramEmbed url="https://www.instagram.com/p/DSyicw1DDe5/" />
               </div>
             </div>
             <div className="order-1 md:order-2">

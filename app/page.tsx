@@ -45,7 +45,7 @@ export default function HomePage() {
                   <Button asChild size="lg" className="text-base shadow-lg shadow-primary/20">
                     <Link href="#servicios">Descubre nuestros servicios</Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className="text-base border-2 bg-transparent">
+                  <Button asChild size="lg" className="text-base shadow-lg shadow-primary/20">
                     <Link href="#contacto">Contactar</Link>
                   </Button>
                 </div>
@@ -76,10 +76,12 @@ export default function HomePage() {
             <div className="order-2 md:order-1">
               <ScaleIn>
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-secondary/10">
-                  <img
-                    src="/sound-therapy-healing-session-with-gongs-and-singi.jpg"
+                  <Image
+                    src="/foto-kong.png"
                     alt="Sesión de sanación con gongs y cuencos"
                     className="w-full h-auto"
+                    width={500}
+                    height={500}
                   />
                 </div>
               </ScaleIn>
