@@ -307,6 +307,7 @@ export default function FloatingLines({
   useEffect(() => {
     if (!containerRef.current) return
 
+    
     const scene = new Scene()
     const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1)
     camera.position.z = 1
