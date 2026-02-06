@@ -85,6 +85,17 @@ export default function RootLayout({
               <p className="text-sm text-foreground/70 font-medium">
                 © {new Date().getFullYear()} Vibralma. Todos los derechos reservados.
               </p>
+              <p className="text-sm text-foreground/70 font-medium mt-2">
+                Sitio web construido por{" "}
+                <a
+                  href="https://fluxia.cl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold hover:text-primary transition-colors hover:underline"
+                >
+                  Fluxia
+                </a>
+              </p>
             </div>
           </footer>
           <Analytics />
