@@ -102,7 +102,7 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
                                     </h2>
                                     <div className="flex flex-wrap gap-2 mb-6">
                                         {product.tags.map(tag => (
-                                            <span key={tag} className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary-foreground text-primary border border-primary/20">
+                                            <span key={tag} className="text-xs font-semibold px-3 py-1 rounded-full bg-primary text-primary-foreground shadow-sm">
                                                 {tag}
                                             </span>
                                         ))}
