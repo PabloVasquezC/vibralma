@@ -61,7 +61,7 @@ export default function ProductShowcase() {
                     </div>
                 </FadeIn>
 
-                <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-24 max-w-6xl mx-auto">
                     {products.map((product) => (
                         <StaggerItem
                             key={product.id}
