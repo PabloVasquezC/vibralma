@@ -69,9 +69,7 @@ export default async function CollaboratorsSection() {
                                     {collaborator.specialty || "Especialista"}
                                 </div>
                                 <h3 className="text-2xl font-bold mb-1">{collaborator.name}</h3>
-                                <p className="text-white/80 text-sm flex items-center gap-1">
-                                    <span className="text-primary">📍</span> {collaborator.location}
-                                </p>
+                                
                             </div>
                         </div>
 
