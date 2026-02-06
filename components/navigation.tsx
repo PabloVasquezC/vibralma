@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Menu, X } from "lucide-react"
 import { AnimatePresence, motion } from "framer-motion"
-import { ModeToggle } from "@/components/mode-toggle"
+
 
 export function Navigation() {
   const pathname = usePathname()
@@ -19,6 +19,7 @@ export function Navigation() {
     { href: "/#nosotros", label: "Nosotros" },
     { href: "/#actividades", label: "Actividades" },
     { href: "/#galeria", label: "Galería" },
+    { href: "/productos", label: "Productos" },
     { href: "/#servicios", label: "Servicios" },
     { href: "/#contacto", label: "Contacto" },
   ]
@@ -50,7 +51,7 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <ModeToggle />
+
             <Button asChild size="sm">
               <Link href="/#contacto">Reservar</Link>
             </Button>
@@ -89,7 +90,7 @@ export function Navigation() {
                   </Link>
                 ))}
                 <div className="flex items-center gap-4 mt-4">
-                  <ModeToggle />
+
                   <Button asChild size="lg" onClick={() => setIsOpen(false)}>
                     <Link href="/#contacto">Reservar</Link>
                   </Button>

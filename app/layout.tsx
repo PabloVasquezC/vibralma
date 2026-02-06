@@ -51,8 +51,9 @@ export default function RootLayout({
       <body className={`${inter.variable} ${cormorant.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
-
-          enableSystem
+          defaultTheme="light"
+          forcedTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <div className="fixed inset-0 -z-10 bg-gradient-to-br from-background/50 via-background/60 to-primary/10">

@@ -8,6 +8,8 @@ import { N8nChat } from "@/components/N8n"
 import { Instagram, Facebook, MessageCircle } from "lucide-react"
 import Image from "next/image"
 import { FadeIn, Float, ScaleIn } from "@/components/ui/motion-wrapper"
+import TestimonialsSection from "@/components/testimonials-section"
+import PurposeSection from "@/components/purpose-section"
 
 export default function HomePage() {
   return (
@@ -117,6 +119,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <PurposeSection />
+
       <section id="servicios" className="py-24 px-6 bg-gradient-to-b from-muted/40 to-background border-t border-border/40">
         <div className="container mx-auto max-w-6xl">
           <FadeIn direction="up">
@@ -131,6 +135,8 @@ export default function HomePage() {
           <ServicesSection />
         </div>
       </section>
+
+      <TestimonialsSection />
 
       <section id="contacto" className="py-24 px-6 bg-gradient-to-t from-primary/10 via-background to-background border-t border-border/40">
         <div className="container mx-auto max-w-4xl">
