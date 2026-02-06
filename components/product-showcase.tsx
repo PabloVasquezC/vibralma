@@ -1,9 +1,22 @@
 
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import { FadeIn, StaggerContainer, StaggerItem } from "./ui/motion-wrapper"
 import { Button } from "./ui/button"
+import { ProductModal } from "./product-modal"
 
-const products = [
+interface Product {
+    id: string
+    name: string
+    subtitle: string
+    description: string
+    image: string
+    tags: string[]
+}
+
+const products: Product[] = [
     {
         id: "shanti",
         name: "Shanti",
@@ -47,6 +60,8 @@ const products = [
 ]
 
 export default function ProductShowcase() {
+    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+
     return (
         <section className="py-24 bg-gradient-to-b from-background to-muted/20">
             <div className="container mx-auto px-6">
@@ -65,7 +80,8 @@ export default function ProductShowcase() {
                     {products.map((product) => (
                         <StaggerItem
                             key={product.id}
-                            className="group relative h-96 bg-transparent transition-all duration-500 hover:-translate-y-2 perspective-1000"
+                            className="group relative h-96 bg-transparent transition-all duration-500 hover:-translate-y-2 perspective-1000 cursor-pointer"
+                            onClick={() => setSelectedProduct(product)}
                         >
                             <div className="absolute inset-0 bg-card rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:rotate-x-2 border border-border/50 overflow-visible">
                                 {/* Decorative Background Gradient inside Card */}
@@ -97,7 +113,11 @@ export default function ProductShowcase() {
                                         {product.description}
                                     </p>
 
-                                    <Button className="w-full opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300" variant="default" size="sm">
+                                    <Button
+                                        className="w-full opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-md"
+                                        variant="default"
+                                        size="sm"
+                                    >
                                         Ver Detalle
                                     </Button>
                                 </div>
@@ -105,6 +125,12 @@ export default function ProductShowcase() {
                         </StaggerItem>
                     ))}
                 </StaggerContainer>
+
+                <ProductModal
+                    isOpen={!!selectedProduct}
+                    onClose={() => setSelectedProduct(null)}
+                    product={selectedProduct}
+                />
             </div>
         </section>
     )

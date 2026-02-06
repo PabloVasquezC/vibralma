@@ -142,7 +142,7 @@ export function StaggerContainer({
     )
 }
 
-export function StaggerItem({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function StaggerItem({ children, className = "", ...props }: { children: ReactNode; className?: string } & React.ComponentProps<typeof motion.div>) {
     return (
         <motion.div
             variants={{
@@ -150,6 +150,7 @@ export function StaggerItem({ children, className = "" }: { children: ReactNode;
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
             }}
             className={className}
+            {...props}
         >
             {children}
         </motion.div>
