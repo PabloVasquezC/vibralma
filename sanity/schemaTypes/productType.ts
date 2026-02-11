@@ -4,7 +4,7 @@ import { defineField, defineType } from 'sanity'
 
 export const productType = defineType({
     name: 'product',
-    title: 'Producto',
+    title: 'Productos',
     type: 'document',
     icon: TagIcon,
     fields: [

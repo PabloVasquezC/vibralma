@@ -2,29 +2,29 @@ import { defineType, defineField } from 'sanity'
 
 export const serviceType = defineType({
     name: 'serviceType',
-    title: 'Service Type',
+    title: 'Servicios',
     type: 'document',
     fields: [
         defineField({
             name: 'name',
-            title: 'Name',
+            title: 'Nombre',
             type: 'string',
             validation: Rule => Rule.required(),
         }),
         defineField({
             name: 'location',
-            title: 'Location',
+            title: 'Ubicación',
             type: 'string',
             validation: Rule => Rule.required(),
         }),
         defineField({
             name: 'specialty',
-            title: 'Specialty',
-            type: 'string',
+            title: 'Especialidad',
+            type: 'strin    g',
         }),
         defineField({
             name: 'description',
-            title: 'Description',
+            title: 'Descripción',
             type: 'text',
         }),
         defineField({
@@ -34,7 +34,7 @@ export const serviceType = defineType({
         }),
         defineField({
             name: 'image',
-            title: 'Image',
+            title: 'Imagen',
             type: 'image',
             options: {
                 hotspot: true,

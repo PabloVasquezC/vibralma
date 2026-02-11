@@ -2,23 +2,23 @@ import { defineType, defineField } from 'sanity'
 
 export const activityType = defineType({
     name: 'activityType',
-    title: 'Activity Type',
+    title: 'Actividades',
     type: 'document',
     fields: [
         defineField({
             name: 'name',
-            title: 'Name',
+            title: 'Nombre',
             type: 'string',
             validation: Rule => Rule.required(),
         }),
         defineField({
             name: 'description',
-            title: 'Description',
+            title: 'Descripción',
             type: 'text',
         }),
         defineField({
-            name: 'image',
-            title: 'Image',
+            name: 'image',  
+            title: 'Imagen',
             type: 'image',
             options: {
                 hotspot: true,

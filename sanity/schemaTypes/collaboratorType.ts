@@ -2,34 +2,34 @@ import { defineType, defineField } from 'sanity'
 
 export const collaboratorType = defineType({
     name: 'collaboratorType',
-    title: 'Collaborator Type',
+    title: 'Colaboradores',
     type: 'document',
     fields: [
         defineField({
             name: 'name',
-            title: 'Name',
+            title: 'Nombre',
             type: 'string',
             validation: Rule => Rule.required(),
         }),
         defineField({
             name: 'location',
-            title: 'Location',
+            title: 'Ubicación',
             type: 'string',
             validation: Rule => Rule.required(),
         }),
         defineField({
             name: 'specialty',
-            title: 'Specialty',
+            title: 'Especialidad',
             type: 'string',
         }),
         defineField({
             name: 'description',
-            title: 'Description',
+            title: 'Descripción',
             type: 'text',
         }),
         defineField({
             name: 'image',
-            title: 'Image',
+            title: 'Imagen',
             type: 'image',
             options: {
                 hotspot: true,

@@ -2,12 +2,12 @@ import { defineField, defineType } from 'sanity'
 
 export const galeriaItemType = defineType({
     name: 'galeriaItemType',
-    title: 'Galeria Item Type',
+    title: 'Galeria',
     type: 'document',
     fields: [
         defineField({
             name: 'image',
-            title: 'Image',
+            title: 'Imagen',
             type: 'image',
             options: {
                 hotspot: true,
@@ -15,12 +15,12 @@ export const galeriaItemType = defineType({
         }),
         defineField({
             name: 'title',
-            title: 'Title',
+            title: 'Titulo',
             type: 'string',
         }),
         defineField({
             name: 'description',
-            title: 'Description',
+            title: 'Descripción',
             type: 'text',
         }),
     ],
