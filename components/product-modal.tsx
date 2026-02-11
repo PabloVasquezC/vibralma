@@ -7,12 +7,15 @@ import { motion, AnimatePresence } from "framer-motion"
 import { X, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+
+import { urlFor } from "@/sanity/lib/image"
+
 interface Product {
-    id: string
+    _id: string
     name: string
     subtitle: string
     description: string
-    image: string
+    image: any
     tags: string[]
 }
 
@@ -82,7 +85,7 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
                                     className="relative z-10 w-full h-full flex items-center justify-center"
                                 >
                                     <Image
-                                        src={product.image}
+                                        src={product.image ? urlFor(product.image).url() : '/placeholder.png'}
                                         alt={product.name}
                                         width={500}
                                         height={600}
@@ -101,7 +104,7 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
                                         {product.name}
                                     </h2>
                                     <div className="flex flex-wrap gap-2 mb-6">
-                                        {product.tags.map(tag => (
+                                        {product.tags && product.tags.map(tag => (
                                             <span key={tag} className="text-xs font-semibold px-3 py-1 rounded-full bg-primary text-primary-foreground shadow-sm">
                                                 {tag}
                                             </span>
@@ -138,3 +141,4 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
         </AnimatePresence>
     )
 }
+

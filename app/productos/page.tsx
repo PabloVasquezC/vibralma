@@ -10,10 +10,26 @@ export const metadata: Metadata = {
 export const revalidate = 10
 
 
-export default function ProductsPage() {
+import { client } from "@/sanity/lib/client"
+
+async function getProducts() {
+    const query = `*[_type == "product"] | order(_createdAt asc) {
+        _id,
+        name,
+        subtitle,
+        description,
+        image,
+        tags
+    }`
+    return await client.fetch(query)
+}
+
+export default async function ProductsPage() {
+    const products = await getProducts()
+
     return (
         <main className="min-h-screen pt-20">
-            <ProductShowcase />
+            <ProductShowcase products={products} />
         </main>
     )
 }

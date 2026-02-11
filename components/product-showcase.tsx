@@ -7,59 +7,23 @@ import { FadeIn, StaggerContainer, StaggerItem } from "./ui/motion-wrapper"
 import { Button } from "./ui/button"
 import { ProductModal } from "./product-modal"
 
-interface Product {
-    id: string
+
+import { urlFor } from "@/sanity/lib/image"
+
+export interface Product {
+    _id: string
     name: string
     subtitle: string
     description: string
-    image: string
+    image: any
     tags: string[]
 }
 
-const products: Product[] = [
-    {
-        id: "shanti",
-        name: "Shanti",
-        subtitle: "Blend Equilibrio Vital",
-        description: "Encuentra tu centro y restaura el equilibrio interior con esta mezcla armonizante.",
-        image: "/products/SHANTI.png",
-        tags: ["Equilibrio", "Bienestar", "Armonía"]
-    },
-    {
-        id: "prana-vayu",
-        name: "Prana Vayu",
-        subtitle: "Blend Aire Vital",
-        description: "Renueva tu energía y respira profundamente con la esencia de la vida.",
-        image: "/products/PRANA_VAYU.png",
-        tags: ["Energía", "Respiración", "Vitalidad"]
-    },
-    {
-        id: "energia-zen",
-        name: "Energía Zen",
-        subtitle: "Blend Anti-Estrés",
-        description: "Libera tensiones y sumérgete en un estado de calma profunda y serenidad.",
-        image: "/products/ENERGIA_ZEN.png",
-        tags: ["Relax", "Anti-estrés", "Calma"]
-    },
-    {
-        id: "shuddhi",
-        name: "Shuddhi",
-        subtitle: "Blend Purificación",
-        description: "Limpia tu energía y renueva tu espíritu con esta mezcla purificadora.",
-        image: "/products/SHUDDHI.png",
-        tags: ["Purificación", "Renovación", "Equilibrio"]
-    },
-    {
-        id: "vishram",
-        name: "Vishram",
-        subtitle: "Blend Descanso Profundo",
-        description: "Encuentra la paz interior y disfruta de un descanso reparador con esta mezcla relajante.",
-        image: "/products/VISHRAM.png",
-        tags: ["Descanso", "Relajación", "Paz interior"]
-    }
-]
+interface ProductShowcaseProps {
+    products: Product[]
+}
 
-export default function ProductShowcase() {
+export default function ProductShowcase({ products }: ProductShowcaseProps) {
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
 
     return (
@@ -79,7 +43,7 @@ export default function ProductShowcase() {
                 <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-24 max-w-6xl mx-auto">
                     {products.map((product) => (
                         <StaggerItem
-                            key={product.id}
+                            key={product._id}
                             className="group relative h-96 bg-transparent transition-all duration-500 hover:-translate-y-2 perspective-1000 cursor-pointer"
                             onClick={() => setSelectedProduct(product)}
                         >
@@ -91,7 +55,7 @@ export default function ProductShowcase() {
                                 <div className="relative h-64 flex items-center justify-center -mt-12 z-20">
                                     <div className="absolute inset-x-12 bottom-4 top-12 bg-black/20 rounded-full blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
                                     <Image
-                                        src={product.image}
+                                        src={product.image ? urlFor(product.image).url() : '/placeholder.png'}
                                         alt={product.name}
                                         width={400}
                                         height={500}
