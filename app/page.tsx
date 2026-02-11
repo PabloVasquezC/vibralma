@@ -11,6 +11,9 @@ import { FadeIn, Float, ScaleIn } from "@/components/ui/motion-wrapper"
 import TestimonialsSection from "@/components/testimonials-section"
 import PurposeSection from "@/components/purpose-section"
 
+export const revalidate = 60
+
+
 export default function HomePage() {
   return (
     <main className="relative min-h-screen">

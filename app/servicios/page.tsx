@@ -1,5 +1,8 @@
 import ServicesSection from "@/components/services-section"
 
+export const revalidate = 60
+
+
 export default function ServiciosPage() {
   return (
     <div className="relative min-h-screen py-24 px-6">

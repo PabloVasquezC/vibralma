@@ -3,7 +3,10 @@ import InstagramEmbed from "@/components/instagram-embed"
 import InstagramIframe from "@/components/instagram-embed"
 
 
+export const revalidate = 60
+
 export default function NosotrosPage() {
+
   return (
     <main className="relative min-h-screen">
       <div className="py-24 px-6">
