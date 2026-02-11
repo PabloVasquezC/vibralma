@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: "Conoce nuestra línea de productos de bienestar y aceites esenciales.",
 }
 
-export const revalidate = 60
+export const revalidate = 10
 
 
 export default function ProductsPage() {

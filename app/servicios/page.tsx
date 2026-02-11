@@ -1,6 +1,6 @@
 import ServicesSection from "@/components/services-section"
 
-export const revalidate = 60
+export const revalidate = 10
 
 
 export default function ServiciosPage() {

@@ -11,7 +11,7 @@ import { FadeIn, Float, ScaleIn } from "@/components/ui/motion-wrapper"
 import TestimonialsSection from "@/components/testimonials-section"
 import PurposeSection from "@/components/purpose-section"
 
-export const revalidate = 60
+export const revalidate = 10
 
 
 export default function HomePage() {
