@@ -10,7 +10,7 @@ interface Service {
 
 async function getServices() {
     return await client.fetch<Service[]>(
-        `*[_type == "serviceType"] | order(_createdAt desc) {
+        `*[_type == "serviceType"] | order(name asc) {
       _id,
       name,
       description,

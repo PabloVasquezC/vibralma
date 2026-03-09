@@ -13,7 +13,7 @@ export const revalidate = 10
 import { client } from "@/sanity/lib/client"
 
 async function getProducts() {
-    const query = `*[_type == "product"] | order(_createdAt asc) {
+    const query = `*[_type == "product"] | order(name asc) {
         _id,
         name,
         subtitle,

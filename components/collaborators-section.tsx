@@ -13,7 +13,7 @@ interface Collaborator {
 }
 
 async function getCollaborators() {
-    const query = `*[_type == "collaboratorType"] | order(_createdAt desc) {
+    const query = `*[_type == "collaboratorType"] | order(name asc) {
     _id,
     name,
     location,
@@ -69,7 +69,7 @@ export default async function CollaboratorsSection() {
                                     {collaborator.specialty || "Especialista"}
                                 </div>
                                 <h3 className="text-2xl font-bold mb-1">{collaborator.name}</h3>
-                                
+
                             </div>
                         </div>
 
